@@ -1,38 +1,264 @@
-.App {
-  text-align: center;
+* {
+  outline: none;
+}
+main{
+  width: 2000px;
+}
+html,
+body {
+  height: 100%;
+  min-height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body {
+  color: #40A2E3;
+  margin: 0;
+  background-color: #265073;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tb {
+  display: table;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.td {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+input{
+  color: #F1FADA;
+  font-family: "PT Serif", serif;
+  padding-left: 30px;
+  margin-left: -5px;
+  border: 0;
+  background-color: #40A2E3;
+  border-radius: 20px;
+}
+input::placeholder {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+input:focus::placeholder {
+  color: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+button {
+  color: #40A2E3;
+  font-family: "PT Serif", serif;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+}
+#cover {
+  position: absolute;
+  /*background-color: #9AD0C2;*/
+  background-size: 600px ;
+  top: 10px;
+  left: 0;
+  right: 0;
+  width: 500px;
+  height: 700px;
+  padding: 35px;
+  margin: -83px auto 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px #F1FADA, 0 0 0 20px #ffffffeb;
+  transform: scale(0.6);
+}
+.pt-serif-regular {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-size: x-large;
+  font-style: normal;
+}
+h1{
+  font-size: 3rem;
+
+}
+h2{
+  font-size: 2rem;
+}
+.coverimgwinter {
+  background-image: url('../Assets/winter2.jpg');
+}
+.coverimgwinter h1{
+  color: #FDBF60;
+}
+.coverimgwinter h2{
+  color: #FF8911;
+}
+.coverimgsummer {
+  background-image: url('../Assets/summer2.jpg');
+}
+.coverimgsummer h1{
+  color: orangered;
+}
+.coverimgsummer h2{
+  color: #F72798;
+}
+.coverinitial{
+ background-image: url('../Assets/default.png');;
+}
+
+form {
+  height: 96px;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 96px;
+  font-size: 60px;
+  line-height: 1;
+}
+
+
+#s-cover {
+  width: 1px;
+  padding-left: 35px;
+}
+
+button {
+  position: relative;
+  display: block;
+  width: 84px;
+  height: 96px;
+  cursor: pointer;
+}
+
+#s-circle {
+  position: relative;
+  top: -8px;
+  left: 0;
+  width: 43px;
+  height: 43px;
+  margin-top: 0;
+  border-width: 15px;
+  border: 15px solid #40A2E3;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+}
+
+button span {
+  position: absolute;
+  top: 68px;
+  left: 43px;
+  display: block;
+  width: 45px;
+  height: 15px;
+  background-color: #40A2E3;
+  border-radius: 10px;
+  transform: rotateZ(52deg);
+  transition: 0.5s ease all;
+}
+
+button span:before,
+button span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45px;
+  height: 15px;
+  background-color: #40A2E3;
+  border-radius: 10px;
+  transform: rotateZ(0);
+  transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle {
+  top: -1px;
+  width: 67px;
+  height: 15px;
+  border-width: 0;
+  background-color: #40A2E3;
+  border-radius: 20px;
+}
+
+#s-cover:hover span {
+  top: 50%;
+  left: 56px;
+  width: 25px;
+  margin-top: -9px;
+  transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before {
+  bottom: 11px;
+  transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after {
+  bottom: -11px;
+  transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before,
+#s-cover:hover button span:after {
+  right: -6px;
+  width: 40px;
+  background-color: #40A2E3;
+}
+
+
+
+
+
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 30px;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
   }
 }
